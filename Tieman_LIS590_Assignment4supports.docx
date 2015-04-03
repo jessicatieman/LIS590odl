@@ -1,0 +1,72 @@
+@prefix : <http://courseweb.lis.illinois.edu/lis/2015sp/lis590odl/gslis/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix wped: <http://en.wikipedia.org/wiki/> .
+@prefix dolce: <http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@base <http://courseweb.lis.illinois.edu/lis/2015sp/lis590odl/RDF/gslis.ttl> .
+
+
+
+http://courseweb.lis.illinois.edu/lis/2015sp/lis590odl/gslis/supports
+
+:supports rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Activity ;
+          
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :PhysicalObject
+                                      event:Event
+                                      foaf:Group
+                                      foaf:Person
+                                    )
+                      ] .
+					  
+					  
+:servesAsTopic rdf:type owl:ObjectProperty ; 
+			rdfs: comment "The state of supporting an activity by existing as a topic, such as a topic of a workshop" ;
+			rdfs:subPropertyOf gslis:supports ;
+			rdfs:range :Resource .
+			
+:ultizedForAssignment rdf:type owl: ObjectProperty ;
+			rdfs: comment "The state of being necessary for completion of an assignment in a course" ;
+			rdfs:subPropertyOf gslis:supports ;
+			rdfs:range :Resource .
+			
+:presents rdf:type owl: ObjectProperty ;	
+		  rdfs: comment "The state of displaying information to support an activity such as during a lecture or demonstration" ;
+		  rdfs:subPropertyOf gslis:supports ;
+		  rdfs:range :Resource .
+		  
+:organizes rdf:type owl: ObjectProperty ;
+		   rdfs: comment "The act of providing organization for an activity"
+		   rdfs:subPropertyOf gslis:supports ;
+		   rdfs:range :Resource .
+		   
+:collaborates rdf:type owl: ObjectProperty ;
+		   rdfs: comment "The act of generating collaboration between one or more activities"
+		   rdfs:subPropertyOf gslis:supports ;
+		   rdfs:range :Resource .
+		   
+		   
+		   
+		   
+			
+			
+			
